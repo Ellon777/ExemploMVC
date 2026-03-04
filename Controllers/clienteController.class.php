@@ -1,6 +1,6 @@
 <?php
 
-    class clientesController 
+    class clienteController 
     {
         function inserirCliente() 
         {
@@ -14,7 +14,10 @@
 
         function listarCliente()
         {
-            
+            require_once "Models/cliente.class.php";
+            $cliente = new Cliente();
+            $retorno = $cliente->clientes;
+            require_once "Views/listarclientes.php";
         }
         
         function excluirCliente()
